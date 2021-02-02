@@ -20,3 +20,15 @@ def pairs(ar):
         except IndexError:
             pass
     return count
+
+
+# 2nd method, faster and better, no try block for the last item in the list
+def pairs_2(ar):
+    count = 0
+    for i in range(1, len(ar), 2):  # looping through the index by 2. (etc. 0,2,4,...)
+        if (
+            abs(ar[i] - ar[i - 1]) == 1
+        ):  # abs() is absolute function and checking if they are consecutive.
+            count += 1
+
+    return count
